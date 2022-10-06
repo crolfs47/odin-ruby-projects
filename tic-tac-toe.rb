@@ -16,11 +16,15 @@ class Game
         p row3
     end
 
-    def play
+    def move(player_choice, player)
+        
+        @player_choice = player_choice
+        @player = player
+        @board_positions[player_choice - 1] = player
         display_board
     end
 
 end
 
 game1 = Game.new
-game1.display_board
+game1.move(1, "X")
