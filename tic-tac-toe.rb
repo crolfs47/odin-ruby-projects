@@ -38,7 +38,7 @@ class Game
     @player = player
     if check_valid_move(player_choice)
       @board_positions[player_choice - 1] = player
-      switch_players()
+      switch_players
     else
       puts 'Please enter a valid board position'
     end
@@ -59,7 +59,7 @@ class Game
   end
 
   def check_if_winner
-    winning_combinations = [[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[6,4,2]]
+    winning_combinations = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [6, 4, 2]]
     winning_combinations.each do |combination|
       win_position1 = combination[0]
       win_position2 = combination[1]
@@ -69,18 +69,18 @@ class Game
       position2 = @board_positions[win_position2]
       position3 = @board_positions[win_position3]
 
-      if position1 == position2 && position2 == position3
-        @game_over = true
-        puts "\n"
-        display_board
-        switch_players()
-        puts "\nWINNER is player #{@player_turn}!"
-      end
+      next unless position1 == position2 && position2 == position3
+
+      @game_over = true
+      puts "\n"
+      display_board
+      switch_players
+      puts "\nWINNER is player #{@player_turn}!"
     end
   end
 
   def check_if_tie
-    if @board_positions.all? { |position| position == 'X' || position == 'O'}
+    if @board_positions.all? { |position| %w[X O].include?(position) }
       @game_over = true
       puts "\n"
       display_board
