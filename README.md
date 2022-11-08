@@ -11,4 +11,4 @@ Various Ruby projects from The Odin Project curriculum.
 
 ## Object Oriented Programming Basics:
  - Tic Tac Toe - https://www.theodinproject.com/lessons/ruby-tic-tac-toe
- - Mastermind - https://www.theodinproject.com/lessons/ruby-mastermind
+ - Mastermind (see separate mastermind repo) - https://www.theodinproject.com/lessons/ruby-mastermind
