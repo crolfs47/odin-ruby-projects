@@ -77,6 +77,7 @@ class Game
       switch_players
       puts "\nWINNER is player #{@player_turn}!"
     end
+    return @game_over
   end
 
   def check_if_tie
@@ -89,5 +90,7 @@ class Game
   end
 end
 
-game = Game.new('X', 'O')
-game.play_game
+# removed these for testing purposes, should have had them in another file
+# need to remove # if you want the file to run a game in the terminal
+# game = Game.new('X', 'O')
+# game.play_game
